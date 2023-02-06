@@ -1,10 +1,28 @@
-document.getElementById("test").addEventListener("click",function(){
+var title=document.title;
+document.getElementById("textinput").addEventListener("keyup",function(){
 
     let text=document.getElementById("textinput").value;
     console.log(text)
-    func(text)
+
+    document.title = "Saving..";
+
+    setTimeout(function(){
+        document.title =title;
+    },500)
+
+saveText(text)
   })
-  const func = async (text) => {
-    const response = await window.versions.ping(text)
-    console.log(response) // prints out 'pong'
+  const saveText = async (text) => {
+    const response = await window.versions.saveText(text)
+    console.log(response) 
   }
+  
+  const getText = async (text) => {
+    const response = await window.versions.getText()
+    console.log("got:"+response) 
+
+    document.getElementById("textinput").value=response;
+
+
+  }
+  getText()

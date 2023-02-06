@@ -4,8 +4,12 @@ contextBridge.exposeInMainWorld('versions', {
   node: () => process.versions.node,
   chrome: () => process.versions.chrome,
   electron: () => process.versions.electron,
-  ping: (text) => {
+  saveText: (text) => {
     console.log(text)
-    ipcRenderer.invoke('ping',text)} 
-  // we can also expose variables, not just functions
+    ipcRenderer.invoke('saveText',text)} 
+   ,getText: () => {
+    
+    return ipcRenderer.invoke('getText')
+
+}  
 })

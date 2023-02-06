@@ -4,22 +4,40 @@ const fs = require('fs')
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 300,
-    height: 600,webPreferences: {
+    width: 350,
+    height: 550,webPreferences: {
         preload: path.join(__dirname, 'preload.js'),
-      }, autoHideMenuBar: true
+      }, autoHideMenuBar: true,
+      icon: "img/mini_logo.png"
   });
   win.setAlwaysOnTop(true, 'screen');
 
   win.loadFile('index.html');
+
+
+  if(!fs.existsSync("mini_data.txt"))
+  {
+    
+    fs.writeFileSync("mini_data.txt","Write Your Notes Here")
+  }
   
- // win.webContents.openDevTools();
-  ipcMain.handle("ping",(event,data)=>{
+ //win.webContents.openDevTools();
+ ipcMain.handle("saveText",(event,data)=>{
     console.log(data)
      
-    fs.writeFileSync("test2.txt",data)
-    return "pong"
+    fs.writeFileSync("mini_data.txt",data)
+    
+}) 
+
+ipcMain.handle("getText",(event,data)=>{
+     
+      var text=fs.readFileSync("mini_data.txt","utf-8");
+      console.log(text)
+   return text;
+    
 })
+
+
 };
 
 
@@ -41,5 +59,5 @@ app.on('window-all-closed', () => {
 });
 
 try {
-	require('electron-reloader')(module);
+	require('electron-reloader')(module,{ignore:["mini_data.txt"]});
 } catch {}

@@ -16,8 +16,13 @@ textarea{
     text-align: left;
     align-items: flex-start;
     justify-content: top;
-    font-size: 20px; 
+    font-size: 16px; 
     font-family: system-ui, 'Segoe UI', sans-serif;
 }
+textarea:focus {
+    outline: none !important;
+    border:0px solid green;
+    box-shadow: 0 0 10px #719ECE;
+  }
  
 
