@@ -1,0 +1,17 @@
+{
+  "name": "mini",
+  "version": "1.0.0",
+  "description": "Desktop App Made in Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "notes"
+  ],
+  "author": "vikash anand jha",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^22.2.0"
+  }
+}
