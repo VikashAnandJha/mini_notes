@@ -1,0 +1,23 @@
+body{
+    background-color: #f3f4f5;
+    padding: 0px;
+    margin: 0px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+textarea{
+ background-color: lightyellow;
+ height: 100%;
+ width: 100%;
+ padding: 5px;
+    margin: 0px;
+    border: 0px;
+    min-height: 100vh;
+    text-align: left;
+    align-items: flex-start;
+    justify-content: top;
+    font-size: 20px; 
+    font-family: system-ui, 'Segoe UI', sans-serif;
+}
+ 
+
