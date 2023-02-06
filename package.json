@@ -12,6 +12,7 @@
   "author": "vikash anand jha",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^22.2.0"
+    "electron": "^22.2.0",
+    "electron-reloader": "^1.2.3"
   }
 }

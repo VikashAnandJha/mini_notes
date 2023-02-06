@@ -9,11 +9,13 @@ const createWindow = () => {
         preload: path.join(__dirname, 'preload.js'),
       },
   });
-  win.webContents.openDevTools();
   win.loadFile('index.html');
+  
+  win.webContents.openDevTools();
   ipcMain.handle("ping",(event,data)=>{
     console.log(data)
-    fs.writeFileSync(path.join("Documents", "test.txt"),data)
+     
+    fs.writeFileSync("test2.txt",data)
     return "pong"
 })
 };
@@ -35,3 +37,7 @@ app.on('window-all-closed', () => {
     app.quit();
   }
 });
+
+try {
+	require('electron-reloader')(module);
+} catch {}
