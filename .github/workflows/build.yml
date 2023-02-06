@@ -8,8 +8,7 @@ on:
       - electron
 # this is where the magic happens, each job happens in parallel btw
 jobs:
-
-build_on_win:
+  build_on_win:
     runs-on: windows-2016
     steps:
     - uses: actions/checkout@master
