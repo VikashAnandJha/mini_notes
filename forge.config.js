@@ -20,7 +20,7 @@ module.exports = {
           name: 'mini_notes',
         },
         prerelease: false,
-        draft: true,
+        draft: false,
       },
     },
   ],
