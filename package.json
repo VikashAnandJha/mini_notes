@@ -4,7 +4,9 @@
   "description": "Desktop App Made in Electron",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "keywords": [
     "notes"
@@ -12,7 +14,12 @@
   "author": "vikash anand jha",
   "license": "ISC",
   "devDependencies": {
+    "@electron-forge/cli": "^6.0.4",
+    "@electron-forge/publisher-github": "^6.0.4",
     "electron": "^22.2.0",
     "electron-reloader": "^1.2.3"
+  },
+  "dependencies": {
+    "update-electron-app": "^2.0.1"
   }
 }

@@ -17,8 +17,20 @@ const createWindow = () => {
 
   if(!fs.existsSync("mini_data.txt"))
   {
+    let defaulttext=`
+    Hi 👋,
+    Thanks For choosing mini
+    Its a simple and lightweight note taking app
+    Made for you.
+    You dont need to save the text
+    mini does this automatically for you!
+
+    Start Writing 🤗
     
-    fs.writeFileSync("mini_data.txt","Write Your Notes Here")
+    
+    `
+    
+    fs.writeFileSync("mini_data.txt",defaulttext)
   }
   
  //win.webContents.openDevTools();
