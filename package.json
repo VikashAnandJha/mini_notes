@@ -1,6 +1,6 @@
 {
   "name": "mini",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Desktop App Made in Electron",
   "main": "main.js",
   "scripts": {
